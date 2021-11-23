@@ -33,6 +33,14 @@ class Scene2ViewController: UIViewController {
 
     @objc func tapOnScreen() {
         
+        UIView.animate(withDuration: 2.0) {
+            self.subview.layer.cornerRadius = 50.0 - self.subview.layer.cornerRadius
+
+            print(self.subview.layer.action(forKey: "cornerRadius") ?? "Nil")
+        }
+        
+        
+    
         
     }
 

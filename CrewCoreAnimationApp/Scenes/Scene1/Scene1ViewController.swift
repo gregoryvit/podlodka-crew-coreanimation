@@ -29,6 +29,17 @@ class Scene1ViewController: UIViewController {
 
     @objc func tapOnScreen() {
         
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(3.0)
+        CATransaction.setCompletionBlock {
+            print("Done!")
+        }
+        
+        layer.cornerRadius = 50.0 - layer.cornerRadius
+        
+        print(layer.action(forKey: "cornerRadius") ?? "Nil")
+        
+        CATransaction.commit()
         
     }
 }
